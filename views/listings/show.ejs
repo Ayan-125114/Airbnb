@@ -1,0 +1,21 @@
+<% layout("/layout/boilerplate") -%>
+<body>
+    <h3>Listing Details</h3>
+    <ul>
+        <li><%=listing.title%></li>
+        <li><%=listing.description%></p>
+        <img src="<%=listing.image.url%>" style="width:200px; height:150px;">
+        <li>&#8377;<%=listing.price.toLocaleString("en-In")%></li>
+        <li><%=listing.location%></li>
+        <li><%=listing.country%></li>
+    </ul>
+    <br>
+    <div class="btns">
+        <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark add-btn  offset-2">Edit</a>
+
+        <form method="post" action="/listings/<%=listing._id%>?_method=delete">
+            <button class=" btn btn-dark offset-5">Delete</button>
+        </form>
+    </div>
+    <br>
+</body>
